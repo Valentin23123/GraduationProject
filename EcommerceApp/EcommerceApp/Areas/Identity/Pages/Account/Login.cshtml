@@ -1,0 +1,41 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/LoginAndRegister.css">
+</head>
+
+
+<div class="login-box">
+    <p>Влез</p>
+    <form id="account" method="post">
+        <div class="user-box">
+            <input required="" name="Input.Email" type="text" autocomplete="username" aria-required="true">
+            <label asp-for="Input.Email">Имейл</label>
+            <span asp-validation-for="Input.Email"></span>
+        </div>
+        <div class="user-box">
+            <input required="" name="Input.Password" type="password" autocomplete="current-password" aria-required="true">
+            <label asp-for="Input.Password">Парола</label>
+            <span asp-validation-for="Input.Password"></span>
+        </div>
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+       
+        <button id="login-submit" type="submit">Влез</button>
+        
+    </form>
+    <br></br>
+    <p>Нямаш все още акаунт? <a href="@Url.Content("~/Identity/Account/Register")" class="a2">Направи си!</a></p>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
